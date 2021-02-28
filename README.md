@@ -18,3 +18,4 @@ https://www.kaggle.com/c/cs5228-2020-semester-2-final-project/overview
 | pipeline.py                             | Main project pipeline                        |
 | util.py                                 | Util functions                               |
 | scheduler.sh                            | Bash script to schedule experiments          |
+| experiment_results/                     | Save experiment results to this directory    |
