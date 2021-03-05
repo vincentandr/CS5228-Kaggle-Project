@@ -1,0 +1,12 @@
+Experiment started at  1614947031.7092433 
+
+Loading data...
+(431732, 28)
+   Unnamed: 0  ... num_train_stations_within_radius
+0           0  ...                                0
+1           1  ...                                9
+2           2  ...                                2
+3           3  ...                                1
+4           4  ...                                1
+
+[5 rows x 28 columns]
