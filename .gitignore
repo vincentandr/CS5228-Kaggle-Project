@@ -2,3 +2,5 @@
 /features/feature_vectors/*
 */.DS_Store
 .DS_Store
+.ipynb_checkpoints/
+data/
