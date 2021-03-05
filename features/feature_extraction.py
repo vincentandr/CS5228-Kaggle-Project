@@ -11,19 +11,19 @@ from tqdm import tqdm
 
 
 class FeatureExtraction:
-    TRAIN_DATA = "train.csv"
-    TEST_DATA = "test.csv"
+    TRAIN_DATA = "./data/train.csv"
+    TEST_DATA = "./data/test.csv"
 
     TRAIN_DATA_OUTPUT = "train_output.csv"
     TEST_DATA_OUTPUT = "test_output.csv"
 
-    AUXILLARY_COMMERCIAL_CENTRES = "auxiliary-data/sg-commerical-centres.csv"
-    AUXILLARY_MARKETS_HAWKER_CENTRES = "auxiliary-data/sg-gov-markets-hawker-centres.csv"
-    AUXILLARY_POPULATION_DEMOGRAPHICS = "auxiliary-data/sg-population-demographics.csv"
-    AUXILLARY_PRIMARY_SCHOOLS = "auxiliary-data/sg-primary-schools.csv"
-    AUXILLARY_SECONDARY_SCHOOLS = "auxiliary-data/sg-secondary-schools.csv"
-    AUXILLARY_SHOPPING_MALLS = "auxiliary-data/sg-shopping-malls.csv"
-    AUXILLARY_TRAIN_STATIONS = "auxiliary-data/sg-train-stations.csv"
+    AUXILLARY_COMMERCIAL_CENTRES = "./data/auxiliary-data/sg-commerical-centres.csv"
+    AUXILLARY_MARKETS_HAWKER_CENTRES = "./data/auxiliary-data/sg-gov-markets-hawker-centres.csv"
+    AUXILLARY_POPULATION_DEMOGRAPHICS = "./data/auxiliary-data/sg-population-demographics.csv"
+    AUXILLARY_PRIMARY_SCHOOLS = "./data/auxiliary-data/sg-primary-schools.csv"
+    AUXILLARY_SECONDARY_SCHOOLS = "./data/auxiliary-data/sg-secondary-schools.csv"
+    AUXILLARY_SHOPPING_MALLS = "./data/auxiliary-data/sg-shopping-malls.csv"
+    AUXILLARY_TRAIN_STATIONS = "./data/auxiliary-data/sg-train-stations.csv"
 
     RADIUS_TOLERANCE = 1  # 1km radius
 

@@ -1,0 +1,4 @@
+/features/data/*
+/features/feature_vectors/*
+*/.DS_Store
+.DS_Store

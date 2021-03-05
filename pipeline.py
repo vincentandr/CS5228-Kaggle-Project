@@ -13,7 +13,7 @@
 
 
 # Log start of experiment
-exp_start_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+start_time = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
 print("Experiment "+ experiment_name +" started at ", exp_start_time, "\n")	
 
 # save experiment
@@ -26,3 +26,40 @@ print("Experiment ended at ", datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
 
 
 
+
+
+
+import time
+
+import numpy as np
+import pandas as pd
+
+# For convenient vectorized calculations of haversine distance
+from haversine import haversine_vector
+
+# Show progress bar
+from tqdm import tqdm
+
+
+class Pipeline:
+    TRAIN_DATA = "train.csv"
+    TEST_DATA = "test.csv"
+
+    TRAIN_DATA_OUTPUT = "./features/feature_vectors/train_output.csv"
+
+    def run(self):
+        start_time = time.time()
+        print("Experiment "+ experiment_name +" started at ", start_time.strftime("%d/%m/%Y %H:%M:%S"), "\n")	
+
+        # Load data
+        print("Loading data...")
+
+        (train_data, test_data) = self.load_train_test_data()
+        self.load_auxillary_data()
+
+        print(train_data.shape)
+        print(train_data.head())
+
+if __name__ == "__main__":
+    tqdm.pandas()
+    FeatureExtraction().run()
