@@ -49,6 +49,7 @@ train_input_fn = tf.compat.v1.estimator.inputs.numpy_input_fn(
 test_input_fn = tf.compat.v1.estimator.inputs.numpy_input_fn(
     x={'x': x_test}, y=y_test,
     batch_size=batch_size, num_epochs=1, shuffle=False)
+    
 # GBDT Models from TF Estimator requires 'feature_column' data format.
 feature_columns = [tf.feature_column.numeric_column(key='x', shape=(num_features,))]
 

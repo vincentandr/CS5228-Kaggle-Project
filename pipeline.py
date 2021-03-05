@@ -73,7 +73,8 @@ class Pipeline:
 
         # Load model
         model = self.load_model()
-
+        
+        print(train_data.shape)
         # Generate k folds
         (x_fold, y_fold) = self.generate_k_fold(train_data)
 
@@ -106,19 +107,22 @@ class Pipeline:
         return True
 
     def generate_k_fold(self, data):
-        x_train = data[~['price']]
-        y_train = data[['price']]
+        print(data.shape)
+
+        x_train = data.drop('resale_price', axis=1)
+        y_train = data['resale_price']
+
 
         x_folds = []
         y_folds = []
         kf = KFold(n_splits=self.K_FOLD)
         for train_index, test_index in kf.split(data):
-            x_folds.append(x_train[test_index])
-            y_folds.append(y_train[test_index])
+            x_folds.append(x_train.iloc[test_index.tolist()])
+            y_folds.append(y_train.iloc[test_index.tolist()])
         x_folds = np.array(x_folds)
         y_folds = np.array(y_folds)
         
-        return (x_fold, y_fold)
+        return (x_folds, y_folds)
 
     def run_cross_validation(self, x_fold, y_fold, model):
         for fold in range(0,self.K_FOLD):
