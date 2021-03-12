@@ -2,6 +2,7 @@ import time
 
 import numpy as np
 import pandas as pd
+import re
 
 # For convenient vectorized calculations of haversine distance
 from haversine import haversine_vector
@@ -9,21 +10,20 @@ from haversine import haversine_vector
 # Show progress bar
 from tqdm import tqdm
 
-
 class FeatureExtraction:
-    TRAIN_DATA = "./data/train.csv"
-    TEST_DATA = "./data/test.csv"
+    TRAIN_DATA = "../data/train.csv"
+    TEST_DATA = "../data/test.csv"
 
-    TRAIN_DATA_OUTPUT = "train_output.csv"
-    TEST_DATA_OUTPUT = "test_output.csv"
+    TRAIN_DATA_OUTPUT = "../data/train_output.csv"
+    TEST_DATA_OUTPUT = "../data/test_output.csv"
 
-    AUXILLARY_COMMERCIAL_CENTRES = "./data/auxiliary-data/sg-commerical-centres.csv"
-    AUXILLARY_MARKETS_HAWKER_CENTRES = "./data/auxiliary-data/sg-gov-markets-hawker-centres.csv"
-    AUXILLARY_POPULATION_DEMOGRAPHICS = "./data/auxiliary-data/sg-population-demographics.csv"
-    AUXILLARY_PRIMARY_SCHOOLS = "./data/auxiliary-data/sg-primary-schools.csv"
-    AUXILLARY_SECONDARY_SCHOOLS = "./data/auxiliary-data/sg-secondary-schools.csv"
-    AUXILLARY_SHOPPING_MALLS = "./data/auxiliary-data/sg-shopping-malls.csv"
-    AUXILLARY_TRAIN_STATIONS = "./data/auxiliary-data/sg-train-stations.csv"
+    AUXILLARY_COMMERCIAL_CENTRES = "../data/auxiliary-data/sg-commerical-centres.csv"
+    AUXILLARY_MARKETS_HAWKER_CENTRES = "../data/auxiliary-data/sg-gov-markets-hawker-centres.csv"
+    AUXILLARY_POPULATION_DEMOGRAPHICS = "../data/auxiliary-data/sg-population-demographics.csv"
+    AUXILLARY_PRIMARY_SCHOOLS = "../data/auxiliary-data/sg-primary-schools.csv"
+    AUXILLARY_SECONDARY_SCHOOLS = "../data/auxiliary-data/sg-secondary-schools.csv"
+    AUXILLARY_SHOPPING_MALLS = "../data/auxiliary-data/sg-shopping-malls.csv"
+    AUXILLARY_TRAIN_STATIONS = "../data/auxiliary-data/sg-train-stations.csv"
 
     RADIUS_TOLERANCE = 1  # 1km radius
 
@@ -51,10 +51,18 @@ class FeatureExtraction:
         print("Adding additional features to test data...")
         test_data_new = self.add_features(test_data)
 
+        # Preprocessing
+        print("Preprocessing...")
+        (train_data_new, test_data_new) = self.preprocess(train_data_new, test_data_new)
+
+        print("Doing one-hot encoding...")
+        train_data_new = self.one_hot_encoding(train_data_new)
+        test_data_new = self.one_hot_encoding(test_data_new)
+
         # Save data to csv
         print("Saving data...")
-        train_data_new.to_csv(self.TRAIN_DATA_OUTPUT)
-        test_data_new.to_csv(self.TEST_DATA_OUTPUT)
+        train_data_new.to_csv(self.TRAIN_DATA_OUTPUT, index=False)
+        test_data_new.to_csv(self.TEST_DATA_OUTPUT, index=False)
 
         # Done
         end_time = time.time()
@@ -90,6 +98,19 @@ class FeatureExtraction:
 
         num_train_stations = self.get_num_train_stations_within_radius(data)
         data['num_train_stations_within_radius'] = num_train_stations
+
+        (year, month) = self.get_month_and_year(data)
+        data['year'] = year
+        data['month'] = month
+
+        (is_13, is_4) = self.get_inauspicious_street_number(data)
+        data['is_13'] = is_13
+        data['is_4'] = is_4
+
+        letters = self.get_block_letter(data)
+        data['block_letter'] = letters
+
+        data['age_of_lease'] = self.get_age_of_lease(data)
 
         return data
 
@@ -229,6 +250,77 @@ class FeatureExtraction:
             return (distance <= self.RADIUS_TOLERANCE).sum()
 
         return data.progress_apply(num_train_stations_within_radius, axis=1)
+
+    def get_month_and_year(self, data):
+        monthlist = data['month'].to_list()
+
+        year = [month.split('-')[0] for month in monthlist]
+        month = [month.split('-')[1] for month in monthlist]
+
+        return year, month
+
+    def get_inauspicious_street_number(self, data):
+        street = data['street_name'].to_list()
+
+        street_number = [re.search(r'\d+', s).group() if re.search(r'\d+', s) is not None else None for s in street]
+
+        is_13 = [int(number == '13') for number in street_number]
+        is_4 = [int(number == '4' or number == '04') for number in street_number]
+
+        return is_13, is_4
+
+    def get_age_of_lease(self, data):
+        return data['year'].astype(int) - data['lease_commence_date'].astype(int)
+
+    def get_block_letter(self, data):
+        letters = data['block'].str.extract('([A-Za-z])', expand=False)
+
+        # fill in 0 to street without numbers
+        letters = letters.fillna(0).to_list()
+
+        letters_new = [ord(letter.upper()) - 64 if letter != 0 else 0 for letter in letters]
+
+        return letters_new
+
+    def preprocess(self, train_data, test_data):
+        # drop unused columns
+        dropped_columns = ['latitude', 'longitude', 'town', 'subzone', 'street_name', 'eco_category', 'elevation']
+        train_data_new = train_data.drop(columns=dropped_columns)
+        test_data_new = test_data.drop(columns=dropped_columns)
+
+        # drop duplicates
+        train_data_new = train_data_new.drop_duplicates()
+
+        # remove letters in block
+        train_data_new['block'] = train_data_new['block'].str.replace('[A-Za-z]', '', regex=True)
+
+        # replace - char to space in flat type
+        train_data_new['flat_type'] = train_data_new['flat_type'].str.replace('-', ' ')
+        test_data_new['flat_type'] = test_data_new['flat_type'].str.replace('-', ' ')
+
+        # replace all values of count < min_count with 'other' in each replaced_columns
+        replaced_columns = ['planning_area', 'storey_range', 'flat_model']
+        min_count = 100
+
+        for column in replaced_columns:
+            column_with_counts = train_data_new[column].value_counts()
+            to_be_replaced = column_with_counts[column_with_counts < min_count].index.to_list()
+            train_data_new[column] = np.where(~train_data_new[column].isin(to_be_replaced),
+                                                   train_data_new[column], 'other_' + column)
+            test_data_new[column] = np.where(~test_data_new[column].isin(to_be_replaced),
+                                                  test_data_new[column], 'other_' + column)
+
+        return train_data_new, test_data_new
+
+    def one_hot_encoding(self, data):
+        categorical_columns = ['flat_type', 'storey_range', 'flat_model', 'planning_area', 'region']
+        one_hot = [pd.get_dummies(data[column]) for column in categorical_columns]
+        data = data.drop(columns=categorical_columns)
+        concat_data = data
+        for x in one_hot:
+            concat_data = pd.concat([concat_data, x], axis=1)
+        return concat_data
+
 
 
 if __name__ == "__main__":
