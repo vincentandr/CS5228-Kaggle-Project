@@ -254,8 +254,11 @@ class FeatureExtraction:
     def get_month_and_year(self, data):
         monthlist = data['month'].to_list()
 
-        year = [month.split('-')[0] for month in monthlist]
-        month = [month.split('-')[1] for month in monthlist]
+        year, month = [], []
+
+        for l in monthlist:
+            year.append(l.split('-')[0])
+            month.append(l.split('-')[1])
 
         return year, month
 
@@ -264,8 +267,11 @@ class FeatureExtraction:
 
         street_number = [re.search(r'\d+', s).group() if re.search(r'\d+', s) is not None else None for s in street]
 
-        is_13 = [int(number == '13') for number in street_number]
-        is_4 = [int(number == '4' or number == '04') for number in street_number]
+        is_13, is_4 = [], []
+
+        for number in street_number:
+            is_13.append(int(number == '13'))
+            is_4.append(int(number == '4' or number == '04'))
 
         return is_13, is_4
 
