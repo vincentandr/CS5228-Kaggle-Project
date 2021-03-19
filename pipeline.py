@@ -51,7 +51,6 @@ parser.add_argument("-m", "--model", type=str, help="model")
 parser.add_argument("-f", "--folds", type=int, help="number of folds for CV")
 args = parser.parse_args()
 
-
 class Pipeline:
     TRAIN_DATA = "./features/train_output.csv"
     TRAIN_DATA_OUTPUT = "./features/train_output.csv"
@@ -75,7 +74,13 @@ class Pipeline:
         model = self.load_model()
         
         print(train_data.shape)
-        # Generate k folds
+
+
+        # Hyperparemeter testing loop
+        self.load_param_grid()
+
+        
+        # Generate k folds 
         (x_fold, y_fold) = self.generate_k_fold(train_data)
 
         # Run cross validation 
@@ -97,6 +102,12 @@ class Pipeline:
             model = LinearRegression
         return model
         
+    def load_param_grid(self):
+        if (args.model == "linear-regression"):
+            import models.linear_regression_param_grid
+        else if (args.model == "random-forest"):
+            import models.random_forest
+            
     def check_arguments(self):
         if (args.model is None):
             print("Please provide model")

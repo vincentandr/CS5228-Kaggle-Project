@@ -5,5 +5,4 @@
 .ipynb_checkpoints/
 data/
 
-/features/test_output.csv
-/features/train_output.csv
+/features/extracted_data/*
