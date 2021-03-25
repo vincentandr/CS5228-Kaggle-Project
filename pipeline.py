@@ -52,10 +52,11 @@ parser.add_argument("-f", "--folds", type=int, help="number of folds for CV")
 args = parser.parse_args()
 
 class Pipeline:
-    TRAIN_DATA = "./features/train_output.csv"
-    TRAIN_DATA_OUTPUT = "./features/train_output.csv"
+    TRAIN_DATA = "./features/extracted_data/train_standardizedohe_output.csv"
+    TRAIN_DATA_OUTPUT = "./features/extracted_data/train_standardizedohe_output.csv"
     PREDICTION_OUTPUT = "./results_analysis/results/experiment_output.csv"
     K_FOLD = args.folds
+    param_grid = None
 
     def run(self):
         start_time = time.time()
@@ -67,29 +68,26 @@ class Pipeline:
         # Load data
         print("Loading data...")
         train_data = self.load_train_data()
-        print(train_data.shape)
-        print(train_data.head())
-
+        
         # Load model
         model = self.load_model()
-        
-        print(train_data.shape)
-
 
         # Hyperparemeter testing loop
         self.load_param_grid()
 
-        
         # Generate k folds 
-        (x_fold, y_fold) = self.generate_k_fold(train_data)
+        folds = self.generate_k_fold(train_data)
 
-        # Run cross validation 
-        self.run_cross_validation(x_fold, y_fold, model)
+        # Run hyperparameter search 
+        # self.run_hyperparameter_search(folds, train_data, model)
 
-        # Predict test
-        test_data = self.load_test_data()
-        y_pred = self.predict_test(train_data, test_data, model)
-        y_pred.to_csv(self.PREDICTION_OUTPUT)
+        print(model)
+        print(self.param_grid)
+
+        # # Predict test
+        # test_data = self.load_test_data()
+        # y_pred = self.predict_test(train_data, test_data, model)
+        # y_pred.to_csv(self.PREDICTION_OUTPUT)
        
     def load_train_data(self):
         train_data = pd.read_csv(self.TRAIN_DATA)
@@ -97,16 +95,20 @@ class Pipeline:
 
     def load_model(self):
         model = None
-        if (args.model == "linear-regression"):
+        print(args.model)
+        if (args.model == "linear_regression"):
             from models.linear_regression import LinearRegression
             model = LinearRegression
+            print(model)
         return model
         
     def load_param_grid(self):
-        if (args.model == "linear-regression"):
-            import models.linear_regression_param_grid
-        else if (args.model == "random-forest"):
-            import models.random_forest
+        if (args.model == "linear_regression"):
+            from models.linear_regression_param_grid import param_grid
+            self.param_grid = param_grid
+        if (args.model == "random_forest"):
+            from models.random_forest_param_grid import param_grid
+            self.param_grid = param_grid
             
     def check_arguments(self):
         if (args.model is None):
@@ -118,24 +120,11 @@ class Pipeline:
         return True
 
     def generate_k_fold(self, data):
-        print(data.shape)
-
-        x_train = data.drop('resale_price', axis=1)
-        y_train = data['resale_price']
-
-
-        x_folds = []
-        y_folds = []
         kf = KFold(n_splits=self.K_FOLD)
-        for train_index, test_index in kf.split(data):
-            x_folds.append(x_train.iloc[test_index.tolist()])
-            y_folds.append(y_train.iloc[test_index.tolist()])
-        x_folds = np.array(x_folds)
-        y_folds = np.array(y_folds)
-        
-        return (x_folds, y_folds)
+        return kf.split(data)
 
-    def run_cross_validation(self, x_fold, y_fold, model):
+    def run_hyperparameter_search(self, folds, data,  model):
+        
         for fold in range(0,self.K_FOLD):
             index = [x for i,x in enumerate(fold_iterator) if i!=fold_no] 
 

@@ -1,16 +1,37 @@
-Experiment started at  1614956072.019465 
+Experiment started at  1616552489.4932768 
 
 Loading data...
-(431732, 28)
-   Unnamed: 0  ... num_train_stations_within_radius
-0           0  ...                                0
-1           1  ...                                9
-2           2  ...                                2
-3           3  ...                                1
-4           4  ...                                1
+(431101, 99)
+   month  block  floor_area_sqm  ...  north region  north-east region  west region
+0      8    440           118.0  ...             0                  0            0
+1     10    196           110.0  ...             0                  1            0
+2      9    404           112.0  ...             0                  1            0
+3     10    375            67.0  ...             0                  0            1
+4      1    163            73.0  ...             0                  0            1
 
-[5 rows x 28 columns]
-(431732, 28)
-(431732, 28)
-[ 71956  71957  71958 ... 431729 431730 431731]
-[    0     1     2 ... 71953 71954 71955]
+[5 rows x 99 columns]
+Index(['month', 'block', 'floor_area_sqm', 'lease_commence_date',
+       'resale_price', 'dist_closest_market_hawker_centre',
+       'num_market_hawker_centre_within_radius', 'dist_closest_primary_school',
+       'num_primary_schools_within_radius', 'dist_closest_secondary_school',
+       'num_secondary_schools_within_radius', 'dist_closest_shopping_mall',
+       'num_shopping_malls_within_radius', 'dist_closest_train_station',
+       'num_train_stations_within_radius', 'year', 'is_13', 'is_4',
+       'block_letter', 'age_of_lease', '1 room', '2 room', '3 room', '4 room',
+       '5 room', 'executive', 'multi generation', '01 to 03', '01 to 05',
+       '04 to 06', '06 to 10', '07 to 09', '10 to 12', '11 to 15', '13 to 15',
+       '16 to 18', '16 to 20', '19 to 21', '22 to 24', '25 to 27', '28 to 30',
+       '31 to 33', '34 to 36', '37 to 39', '40 to 42', 'other_storey_range',
+       'adjoined flat', 'apartment', 'dbss', 'improved', 'maisonette',
+       'model a', 'model a maisonette', 'model a2', 'multi generation.1',
+       'new generation', 'other_flat_model', 'premium apartment', 'simplified',
+       'standard', 'terrace', 'type s1', 'type s2', 'ang mo kio', 'bedok',
+       'bishan', 'bukit batok', 'bukit merah', 'bukit panjang', 'bukit timah',
+       'changi', 'choa chu kang', 'clementi', 'downtown core', 'geylang',
+       'hougang', 'jurong east', 'jurong west', 'kallang', 'marine parade',
+       'novena', 'other_planning_area', 'outram', 'pasir ris', 'punggol',
+       'queenstown', 'rochor', 'sembawang', 'sengkang', 'serangoon',
+       'tampines', 'toa payoh', 'woodlands', 'yishun', 'central region',
+       'east region', 'north region', 'north-east region', 'west region'],
+      dtype='object')
+(431101, 99)
