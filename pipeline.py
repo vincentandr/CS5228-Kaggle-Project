@@ -38,7 +38,7 @@ import argparse
 
 # Import sklearn helpers
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate, KFold
-
+from sklearn.metrics import classification_report,mean_squared_error
 # For convenient vectorized calculations of haversine distance
 from haversine import haversine_vector
 
@@ -79,10 +79,8 @@ class Pipeline:
         folds = self.generate_k_fold(train_data)
 
         # Run hyperparameter search 
-        # self.run_hyperparameter_search(folds, train_data, model)
+        self.run_hyperparameter_search(folds, train_data, model)
 
-        print(model)
-        print(self.param_grid)
 
         # # Predict test
         # test_data = self.load_test_data()
@@ -96,10 +94,18 @@ class Pipeline:
     def load_model(self):
         model = None
         print(args.model)
+        # if (args.model == "linear_regression"):
+        #     from models.linear_regression import LinearRegression
+        #     model = LinearRegression()
+        #     print(model)
         if (args.model == "linear_regression"):
-            from models.linear_regression import LinearRegression
-            model = LinearRegression
-            print(model)
+            from sklearn.linear_model import LinearRegression
+            model = LinearRegression()
+            # print(model)
+        if (args.model == "random_forest"):
+            from sklearn.ensemble import RandomForestRegressor
+            model = RandomForestRegressor(verbose = 2)
+            # print(model)
         return model
         
     def load_param_grid(self):
@@ -124,26 +130,30 @@ class Pipeline:
         return kf.split(data)
 
     def run_hyperparameter_search(self, folds, data,  model):
-        
-        for fold in range(0,self.K_FOLD):
-            index = [x for i,x in enumerate(fold_iterator) if i!=fold_no] 
+        train_labels = data['resale_price'].values
+        train_features = data.drop('resale_price', axis=1).values
+        print(train_labels.shape)
+        print(train_features.shape)
 
-            x_train = np.concatenate((x_fold[train_index]), axis=0)
-            y_train = np.concatenate((y_fold[train_index]), axis=0)
-            x_test = x_fold[fold_no]
-            y_test = y_fold[fold_no] 
+        for train_index, test_index in folds:
+            print("TRAIN:", train_index, "TEST:", test_index)
+            X_train, X_test = train_features[train_index], train_features[test_index]
+            y_train, y_test = train_labels[train_index], train_labels[test_index]
+            
+            # X_train, X_test = train_features.iloc(train_index), train_features.iloc(test_index)
+            # y_train, y_test = train_labels.iloc(train_index), train_labels.iloc(test_index)
+            model.fit(X_train, y_train)
+            pred_test = model.predict(X_test)
 
-            model.fit(x_train, y_train)
-            pred_test = model.predict(x_test)
-
-            report = classification_report(y_test, pred_test, output_dict=True)
+            score = mean_squared_error(y_test, pred_test, squared=False)
+            print(score)
 
     def predict_test(self, train_data, test_data, model):
         x_train = train_data[~['price']]
         y_train = train_data[['price']]
         x_test = test_data[~['price']]
 
-        model.fit(x_train, y_train)
+        model.fit(X_train=x_train, y_train=y_train)
         y_test = model.predict(x_test)
         return y_test
         

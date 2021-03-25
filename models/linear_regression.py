@@ -2,55 +2,53 @@ from __future__ import absolute_import, division, print_function
 import tensorflow as tf
 import numpy as np
 
+# Hyper parameters.
+learning_rate = 0.01
+training_steps = 1000
+display_step = 50
+
 
 class LinearRegression:
-    rng = np.random
+    W = None
+    B = None
 
-    W = tf.Variable(rng.randn(), name="weight")
-    B = tf.Variable(rng.randn(), name="bias")
-    # Linear regression (Wx + b).
-    def linear_regression( x):
-            return W * x + B
+    def fit(self, X_train, y_train):
 
-    def fit(self, train_x, train_y):
+        W = tf.Variable(np.random.normal(), name='W')
+        B = tf.Variable(np.random.normal(), name='b')
+
         # Mean square error.
         def mean_square(y_pred, y_true):
             return tf.reduce_mean(tf.square(y_pred - y_true))
 
         # Stochastic Gradient Descent Optimizer.
         optimizer = tf.optimizers.SGD(learning_rate)
-        
-        # Linear regression (Wx + b).
-        def linear_regression(x):
-            return self.W * x + self.B
-            
-        # Optimization process. 
-        def run_optimization():
-            # Wrap computation inside a GradientTape for automatic differentiation.
+
+        # Run training for the given number of steps.
+        for step in range(1, training_steps + 1):
+            # Run the optimization to update W and b values.
             with tf.GradientTape() as g:
-                pred = linear_regression(X)
-                loss = mean_square(pred, Y)
+                print(W.shape)
+                print(X_train.shape)
+                print(B.shape)
+                pred = tf.add(tf.multiply(W, X_train), B)
+                print(pred.shape)
+                print(y_train.shape)
+               
+                loss = mean_square(pred, y_train)
 
             # Compute gradients.
             gradients = g.gradient(loss, [self.W, self.B])
             
             # Update W and b following gradients.
             optimizer.apply_gradients(zip(gradients, [self.W, self.B]))
-
-        # Run training for the given number of steps.
-        for step in range(1, training_steps + 1):
-            # Run the optimization to update W and b values.
-            run_optimization()
             
             if step % display_step == 0:
-                pred = linear_regression(X)
-                loss = mean_square(pred, Y)
+                pred = tf.add(tf.multiply(W, X_train), B)
+                loss = mean_square(pred, y_train)
                 print("step: %i, loss: %f, W: %f, B: %f" % (step, loss,  self.W.numpy(), self.B.numpy()))
 
-    def predict(self, test_x):
+    def predict(self, X_test):
         # Linear regression (Wx + b).
-        def linear_regression(x):
-            return self.W * x + self.B
-
-        test_y = linear_regression(test_x)
-        return test_y
+        pred = tf.add(tf.multiply(W, X_test), B)
+        return pred
