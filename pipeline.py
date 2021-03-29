@@ -60,15 +60,15 @@ class Pipeline:
         # Hyperparemeter testing loop
         self.load_param_grid()
 
-        # # Run hyperparameter search
-        # self.run_hyperparameter_search(train_data, model)
+        # Run hyperparameter search
+        self.run_hyperparameter_search(train_data, model)
 
         # Run feature selection
         self.run_feature_selection(train_data, model)
 
-        # # # Predict test
-        # test_data = self.load_test_data()
-        # test_predictions = self.predict_test(train_data, test_data, model)
+        # # Predict test
+        test_data = self.load_test_data()
+        self.predict_test(train_data, test_data, model)
 
     def load_train_data(self):
         train_data = pd.read_csv(self.TRAIN_DATA)
