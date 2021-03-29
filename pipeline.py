@@ -8,6 +8,7 @@ import math
 # Import sklearn helpers
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate, KFold
 from sklearn.metrics import classification_report, mean_squared_error
+from sklearn.feature_selection import SelectKBest, chi2, f_classif
 
 # For convenient vectorized calculations of haversine distance
 from haversine import haversine_vector
@@ -59,12 +60,15 @@ class Pipeline:
         # Hyperparemeter testing loop
         self.load_param_grid()
 
-        # Run hyperparameter search
-        self.run_hyperparameter_search(train_data, model)
+        # # Run hyperparameter search
+        # self.run_hyperparameter_search(train_data, model)
 
-        # # Predict test
-        test_data = self.load_test_data()
-        test_predictions = self.predict_test(train_data, test_data, model)
+        # Run feature selection
+        self.run_feature_selection(train_data, model)
+
+        # # # Predict test
+        # test_data = self.load_test_data()
+        # test_predictions = self.predict_test(train_data, test_data, model)
 
     def load_train_data(self):
         train_data = pd.read_csv(self.TRAIN_DATA)
@@ -217,6 +221,44 @@ class Pipeline:
                 best_rmse = avg_rmse
                 self.best_parameters = current_paramters
             print("Average RMSE: ", total_rmse/self.K_FOLD)
+
+    def run_feature_selection(self, data,  model):
+        """
+            This function generates the self.best_no_of_features value, after doing feature selection
+            # Arguments
+                data: that will be used during hyperparameter search
+                model: the type of model used
+            # Returns
+                None
+        """
+        # transforming data before training and prediction
+        train_labels = data['resale_price']
+        train_features = data.drop('resale_price', axis=1)
+
+        best_rmse = math.inf
+        for current_k in range(1, len(data.columns[1:]) + 1):
+            train_new_features = SelectKBest(
+                f_classif, k=current_k).fit_transform(train_features, train_labels)
+
+            # Split train test data
+            X_train, X_test, y_train, y_test = train_test_split(
+                train_new_features, train_labels, random_state=42, test_size=0.1)
+
+            # Training the model
+            current_model = model()
+            current_model.fit(X_train, y_train)
+
+            # Predict
+            predictions = current_model.predict(X_test)
+            current_rmse = mean_squared_error(
+                predictions, y_test, squared=False)
+
+            print("K: ", current_k, ", RMSE: ", current_rmse)
+
+            if (current_rmse < best_rmse):
+                best_rmse = current_rmse
+                self.best_no_of_features = current_k
+        print("Best RMSE : ",  best_rmse, " K: ", self.best_no_of_features)
 
     def predict_test(self, train_data, test_data, model):
         """
