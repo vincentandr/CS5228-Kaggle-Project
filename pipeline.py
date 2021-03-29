@@ -3,6 +3,7 @@ import sys
 import numpy as np
 import pandas as pd
 import argparse
+import math
 
 # Import sklearn helpers
 from sklearn.model_selection import train_test_split, cross_val_score, cross_validate, KFold
@@ -182,6 +183,7 @@ class Pipeline:
         train_labels = data['resale_price']
         train_features = data.drop('resale_price', axis=1)
 
+        best_rmse = math.inf
         # generate iteratble param combinations from param_Grid
         param_combinations = list(ParameterGrid(self.param_grid))
         for current_paramters in param_combinations:
@@ -207,6 +209,12 @@ class Pipeline:
                 current_fold = current_fold + 1
                 total_rmse = total_rmse + score
 
+                self.best_parameters = current_paramters
+
+            # Comparing the RMSE of current parameters to the best so far
+            avg_rmse = total_rmse / self.K_FOLD
+            if (avg_rmse < best_rmse):
+                best_rmse = avg_rmse
                 self.best_parameters = current_paramters
             print("Average RMSE: ", total_rmse/self.K_FOLD)
 
