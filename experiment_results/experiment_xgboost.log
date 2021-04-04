@@ -1,0 +1,193 @@
+Experiment started at  1617253424.3274553 
+
+Loading data...
+xg_boost
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 8, 'n_estimators': 200, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  20136.67602683267
+Fold:  2 , RMSE:  20461.28288696629
+Fold:  3 , RMSE:  20264.1662641857
+Fold:  4 , RMSE:  20214.44174183312
+Fold:  5 , RMSE:  20472.303126481358
+Average RMSE:  20309.774009259832
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 8, 'n_estimators': 500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  17872.953406818804
+Fold:  2 , RMSE:  18160.098280756894
+Fold:  3 , RMSE:  17928.85532973179
+Fold:  4 , RMSE:  17915.69168101438
+Fold:  5 , RMSE:  18143.758921202654
+Average RMSE:  18004.271523904907
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 8, 'n_estimators': 1000, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16782.030569124356
+Fold:  2 , RMSE:  17018.011297464596
+Fold:  3 , RMSE:  16886.2925399702
+Fold:  4 , RMSE:  16836.152807025577
+Fold:  5 , RMSE:  17026.06293502922
+Average RMSE:  16909.710029722788
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 8, 'n_estimators': 1500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16393.931662398172
+Fold:  2 , RMSE:  16635.72507357536
+Fold:  3 , RMSE:  16533.298896038683
+Fold:  4 , RMSE:  16489.677954238945
+Fold:  5 , RMSE:  16655.387532197667
+Average RMSE:  16541.604223689767
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 10, 'n_estimators': 200, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  18064.704645743273
+Fold:  2 , RMSE:  18287.83367802279
+Fold:  3 , RMSE:  18242.45349923546
+Fold:  4 , RMSE:  18048.009722969953
+Fold:  5 , RMSE:  18263.39383637949
+Average RMSE:  18181.279076470193
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 10, 'n_estimators': 500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16817.559046929706
+Fold:  2 , RMSE:  17012.92258214536
+Fold:  3 , RMSE:  16941.465273151505
+Fold:  4 , RMSE:  16842.50964939458
+Fold:  5 , RMSE:  16999.940599142355
+Average RMSE:  16922.8794301527
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 10, 'n_estimators': 1000, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16325.860528987992
+Fold:  2 , RMSE:  16515.291239825692
+Fold:  3 , RMSE:  16477.891671659883
+Fold:  4 , RMSE:  16421.007206906885
+Fold:  5 , RMSE:  16548.555299620817
+Average RMSE:  16457.72118940025
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 10, 'n_estimators': 1500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16233.219152191057
+Fold:  2 , RMSE:  16422.87307843265
+Fold:  3 , RMSE:  16390.128157898103
+Fold:  4 , RMSE:  16326.603433027522
+Fold:  5 , RMSE:  16458.311708120018
+Average RMSE:  16366.227105933871
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 12, 'n_estimators': 200, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  17083.055905249956
+Fold:  2 , RMSE:  17297.078632281602
+Fold:  3 , RMSE:  17187.085546680326
+Fold:  4 , RMSE:  17101.39338819763
+Fold:  5 , RMSE:  17324.166842743954
+Average RMSE:  17198.556063030694
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 12, 'n_estimators': 500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16482.014381019282
+Fold:  2 , RMSE:  16733.59368678393
+Fold:  3 , RMSE:  16621.722285443466
+Fold:  4 , RMSE:  16543.456461648526
+Fold:  5 , RMSE:  16732.790028379626
+Average RMSE:  16622.71536865497
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 12, 'n_estimators': 1000, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16358.431124998478
+Fold:  2 , RMSE:  16616.847057293413
+Fold:  3 , RMSE:  16533.359239382393
+Fold:  4 , RMSE:  16447.935474031485
+Fold:  5 , RMSE:  16619.683778982922
+Average RMSE:  16515.251334937737
+Current param:  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 12, 'n_estimators': 1500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
+Fold:  1 , RMSE:  16420.024287600154
+Fold:  2 , RMSE:  16666.497147490547
+Fold:  3 , RMSE:  16601.9059282533
+Fold:  4 , RMSE:  16514.707671327476
+Fold:  5 , RMSE:  16678.85010448178
+Average RMSE:  16576.39702783065
+K:  1 , RMSE:  99599.86086498473
+K:  2 , RMSE:  99603.02312902952
+K:  3 , RMSE:  62008.11635329138
+K:  4 , RMSE:  61830.8907810481
+K:  5 , RMSE:  61347.93971735101
+K:  6 , RMSE:  61347.93971735101
+K:  7 , RMSE:  50470.85566207932
+K:  8 , RMSE:  50362.404905625626
+K:  9 , RMSE:  50278.68801655204
+K:  10 , RMSE:  50422.86815579501
+K:  11 , RMSE:  50273.69148389563
+K:  12 , RMSE:  50353.906796124575
+K:  13 , RMSE:  50323.299948829714
+K:  14 , RMSE:  50341.63149984712
+K:  15 , RMSE:  50009.97812261005
+K:  16 , RMSE:  50031.72191705882
+K:  17 , RMSE:  50106.84090655433
+K:  18 , RMSE:  50151.67696013069
+K:  19 , RMSE:  49999.50879294548
+K:  20 , RMSE:  49759.79427841676
+K:  21 , RMSE:  26936.234160164026
+K:  22 , RMSE:  26442.879016851228
+K:  23 , RMSE:  25977.5827775716
+K:  24 , RMSE:  24852.503155666065
+K:  25 , RMSE:  24937.39730600847
+K:  26 , RMSE:  24829.08872034495
+K:  27 , RMSE:  24689.74199610632
+K:  28 , RMSE:  24609.9367958263
+K:  29 , RMSE:  25025.888937579577
+K:  30 , RMSE:  24989.855681078297
+K:  31 , RMSE:  24878.616631810048
+K:  32 , RMSE:  24815.7084338882
+K:  33 , RMSE:  25097.980184123546
+K:  34 , RMSE:  24405.56299574441
+K:  35 , RMSE:  24340.086073661838
+K:  36 , RMSE:  24430.122577007598
+K:  37 , RMSE:  24517.482357937002
+K:  38 , RMSE:  24460.16040781616
+K:  39 , RMSE:  24445.151263028223
+K:  40 , RMSE:  24305.032060812377
+K:  41 , RMSE:  24443.45738160818
+K:  42 , RMSE:  24070.64398553593
+K:  43 , RMSE:  24577.160201398434
+K:  44 , RMSE:  24399.838583205565
+K:  45 , RMSE:  24016.978554235127
+K:  46 , RMSE:  24041.66274464291
+K:  47 , RMSE:  23694.923833755543
+K:  48 , RMSE:  23688.66558618741
+K:  49 , RMSE:  23777.793542127176
+K:  50 , RMSE:  23475.345163965085
+K:  51 , RMSE:  23498.075576139854
+K:  52 , RMSE:  23115.308669222595
+K:  53 , RMSE:  22971.167546246666
+K:  54 , RMSE:  23025.14307040226
+K:  55 , RMSE:  22803.815195755495
+K:  56 , RMSE:  23240.371737455214
+K:  57 , RMSE:  22936.434654441637
+K:  58 , RMSE:  23122.538855528695
+K:  59 , RMSE:  23000.58071914368
+K:  60 , RMSE:  22841.434509176797
+K:  61 , RMSE:  22865.040405300704
+K:  62 , RMSE:  22883.346719720677
+K:  63 , RMSE:  22637.556417423835
+K:  64 , RMSE:  22646.804815323296
+K:  65 , RMSE:  22651.99138618741
+K:  66 , RMSE:  22475.640464694487
+K:  67 , RMSE:  22447.35294096857
+K:  68 , RMSE:  22447.35294096857
+K:  69 , RMSE:  21730.925493293606
+K:  70 , RMSE:  21507.575825471322
+K:  71 , RMSE:  21298.239160107623
+K:  72 , RMSE:  21049.380060547002
+K:  73 , RMSE:  21009.902040620207
+K:  74 , RMSE:  21242.429856551804
+K:  75 , RMSE:  21292.599053300513
+K:  76 , RMSE:  21154.943734710236
+K:  77 , RMSE:  21065.13772797056
+K:  78 , RMSE:  21266.07608970807
+K:  79 , RMSE:  21141.38965553032
+K:  80 , RMSE:  21363.718834656684
+K:  81 , RMSE:  20913.519551335557
+K:  82 , RMSE:  20727.520742261626
+K:  83 , RMSE:  20573.433639159786
+K:  84 , RMSE:  20663.69232337156
+K:  85 , RMSE:  20663.69232337156
+K:  86 , RMSE:  20687.83904297895
+K:  87 , RMSE:  20570.812820852578
+K:  88 , RMSE:  20512.960685367583
+K:  89 , RMSE:  20640.13328501014
+K:  90 , RMSE:  20612.535040800652
+K:  91 , RMSE:  20612.535040800652
+K:  92 , RMSE:  20480.24781578021
+K:  93 , RMSE:  20618.085466505014
+K:  94 , RMSE:  20480.72006382999
+K:  95 , RMSE:  20388.07035595358
+K:  96 , RMSE:  20528.292398344587
+K:  97 , RMSE:  20370.36280944411
+K:  98 , RMSE:  20168.917345147565
+K:  99 , RMSE:  20450.317282652453
+K:  100 , RMSE:  20450.317282652453
+K:  101 , RMSE:  20450.317282652453
+K:  102 , RMSE:  20259.092248190038
+K:  103 , RMSE:  20349.20523705462
+Best RMSE :  20168.917345147565  K:  98
+Predicting using :  {'booster': 'gbtree', 'learning_rate': 0.05, 'max_depth': 12, 'n_estimators': 1500, 'random_state': 42, 'tree_method': 'gpu_hist', 'verbosity': 1}
