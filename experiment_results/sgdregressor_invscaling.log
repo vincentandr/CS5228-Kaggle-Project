@@ -1,0 +1,910 @@
+Fitting 4 folds for each of 160 candidates, totalling 640 fits
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l1, invscaling]
+Mean test score: -2206425323200.8584
+Mean fit time: 3.5787534713745117
+Mean score time: 0.10257607698440552 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l1, invscaling]
+Mean test score: -64257.32293637232
+Mean fit time: 3.286178410053253
+Mean score time: 0.1159258484840393 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l1, invscaling]
+Mean test score: -42052.11874013291
+Mean fit time: 13.463234603404999
+Mean score time: 0.08287733793258667 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l1, invscaling]
+Mean test score: -41928.05765405826
+Mean fit time: 300.32406836748123
+Mean score time: 0.08563560247421265 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l2, invscaling]
+Mean test score: -1832260906376.1816
+Mean fit time: 1.9788269400596619
+Mean score time: 0.07864582538604736 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l2, invscaling]
+Mean test score: -61858.85696540108
+Mean fit time: 2.0224952697753906
+Mean score time: 0.07694947719573975 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l2, invscaling]
+Mean test score: -42134.99885618752
+Mean fit time: 7.086963593959808
+Mean score time: 0.08194434642791748 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.001, l2, invscaling]
+Mean test score: -41972.81907029983
+Mean fit time: 201.12093591690063
+Mean score time: 0.09013509750366211 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l1, invscaling]
+Mean test score: -24163427216628.977
+Mean fit time: 3.429719090461731
+Mean score time: 0.0816008448600769 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l1, invscaling]
+Mean test score: -5075446846346.893
+Mean fit time: 3.395005166530609
+Mean score time: 0.09065884351730347 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l1, invscaling]
+Mean test score: -44911.016795514995
+Mean fit time: 5.042848467826843
+Mean score time: 0.09605193138122559 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l1, invscaling]
+Mean test score: -41905.474192262234
+Mean fit time: 35.63296723365784
+Mean score time: 0.09424573183059692 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l2, invscaling]
+Mean test score: -20790225496607.88
+Mean fit time: 2.170080780982971
+Mean score time: 0.08096498250961304 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l2, invscaling]
+Mean test score: -6436508508950.123
+Mean fit time: 2.371183931827545
+Mean score time: 0.1015937328338623 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l2, invscaling]
+Mean test score: -44968.142680772675
+Mean fit time: 3.5691258907318115
+Mean score time: 0.08781999349594116 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.01, l2, invscaling]
+Mean test score: -41932.61536866889
+Mean fit time: 25.716315269470215
+Mean score time: 0.09430509805679321 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l1, invscaling]
+Mean test score: -223394369225484.78
+Mean fit time: 3.524847686290741
+Mean score time: 0.09073221683502197 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l1, invscaling]
+Mean test score: -61499745140450.03
+Mean fit time: 3.793592929840088
+Mean score time: 0.10097342729568481 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l1, invscaling]
+Mean test score: -832245885103.054
+Mean fit time: 5.083563804626465
+Mean score time: 0.10374748706817627 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l1, invscaling]
+Mean test score: -42199.11448787159
+Mean fit time: 28.604455292224884
+Mean score time: 0.13105320930480957 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l2, invscaling]
+Mean test score: -223494937672800.2
+Mean fit time: 2.503074884414673
+Mean score time: 0.10506600141525269 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l2, invscaling]
+Mean test score: -63248878298183.11
+Mean fit time: 3.7152754068374634
+Mean score time: 0.14436453580856323 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l2, invscaling]
+Mean test score: -1108551553007.4114
+Mean fit time: 3.6747705936431885
+Mean score time: 0.14272403717041016 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 0.1, l2, invscaling]
+Mean test score: -42473.632991383914
+Mean fit time: 23.98370534181595
+Mean score time: 0.11591970920562744 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l1, invscaling]
+Mean test score: -2656452921174947.0
+Mean fit time: 3.83597069978714
+Mean score time: 0.11690449714660645 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l1, invscaling]
+Mean test score: -617411600408421.9
+Mean fit time: 3.9450724124908447
+Mean score time: 0.10983812808990479 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l1, invscaling]
+Mean test score: -15011440343215.951
+Mean fit time: 4.617390275001526
+Mean score time: 0.10670691728591919 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l1, invscaling]
+Mean test score: -45421.505295587645
+Mean fit time: 61.872335851192474
+Mean score time: 0.10999459028244019 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l2, invscaling]
+Mean test score: -1659247037414565.8
+Mean fit time: 2.8971933722496033
+Mean score time: 0.11865586042404175 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l2, invscaling]
+Mean test score: -554947900834010.9
+Mean fit time: 2.850921928882599
+Mean score time: 0.11065483093261719 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l2, invscaling]
+Mean test score: -14630001338189.855
+Mean fit time: 3.0019158720970154
+Mean score time: 0.10537981986999512 
+
+[alpha, eta0, penalty, learning rate]: [0.0001, 1, l2, invscaling]
+Mean test score: -45992.4109884771
+Mean fit time: 36.21381878852844
+Mean score time: 0.12435781955718994 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l1, invscaling]
+Mean test score: -2038491886070.7173
+Mean fit time: 3.8851202726364136
+Mean score time: 0.09960824251174927 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l1, invscaling]
+Mean test score: -67835.00663287535
+Mean fit time: 3.8015024662017822
+Mean score time: 0.10452628135681152 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l1, invscaling]
+Mean test score: -42131.87450495669
+Mean fit time: 14.178409039974213
+Mean score time: 0.09815233945846558 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l1, invscaling]
+Mean test score: -41920.36195919226
+Mean fit time: 359.37381130456924
+Mean score time: 0.12079811096191406 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l2, invscaling]
+Mean test score: -1752118279106.1013
+Mean fit time: 2.38314425945282
+Mean score time: 0.0890129804611206 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l2, invscaling]
+Mean test score: -71257.15298991927
+Mean fit time: 2.4768648743629456
+Mean score time: 0.1089734435081482 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l2, invscaling]
+Mean test score: -42846.63931222089
+Mean fit time: 6.599603176116943
+Mean score time: 0.10454785823822021 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.001, l2, invscaling]
+Mean test score: -42481.43669291101
+Mean fit time: 129.39041060209274
+Mean score time: 0.0955689549446106 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l1, invscaling]
+Mean test score: -22113136146462.47
+Mean fit time: 3.8172202706336975
+Mean score time: 0.10595321655273438 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l1, invscaling]
+Mean test score: -5194115542654.309
+Mean fit time: 3.845838785171509
+Mean score time: 0.0964510440826416 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l1, invscaling]
+Mean test score: -46338.72002863432
+Mean fit time: 7.691573262214661
+Mean score time: 0.09883266687393188 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l1, invscaling]
+Mean test score: -41897.1182128159
+Mean fit time: 43.71856188774109
+Mean score time: 0.09591299295425415 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l2, invscaling]
+Mean test score: -23799426735873.91
+Mean fit time: 2.6558569073677063
+Mean score time: 0.11646366119384766 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l2, invscaling]
+Mean test score: -5495009625706.207
+Mean fit time: 2.825697898864746
+Mean score time: 0.12042087316513062 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l2, invscaling]
+Mean test score: -45934.052936002656
+Mean fit time: 3.886284828186035
+Mean score time: 0.11447644233703613 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.01, l2, invscaling]
+Mean test score: -42479.805023286324
+Mean fit time: 18.521157145500183
+Mean score time: 0.10624819993972778 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l1, invscaling]
+Mean test score: -259848523032861.6
+Mean fit time: 3.994966149330139
+Mean score time: 0.10500490665435791 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l1, invscaling]
+Mean test score: -58875236996880.31
+Mean fit time: 3.9158564805984497
+Mean score time: 0.11614376306533813 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l1, invscaling]
+Mean test score: -851242575724.8444
+Mean fit time: 5.247792541980743
+Mean score time: 0.13566458225250244 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l1, invscaling]
+Mean test score: -42302.204337851705
+Mean fit time: 28.32797348499298
+Mean score time: 0.12104946374893188 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l2, invscaling]
+Mean test score: -215979610220218.88
+Mean fit time: 2.5972447395324707
+Mean score time: 0.09546470642089844 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l2, invscaling]
+Mean test score: -50530049083217.69
+Mean fit time: 3.0645318627357483
+Mean score time: 0.13451111316680908 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l2, invscaling]
+Mean test score: -810114413446.321
+Mean fit time: 4.586714029312134
+Mean score time: 0.11140543222427368 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 0.1, l2, invscaling]
+Mean test score: -42795.68796775022
+Mean fit time: 17.247603595256805
+Mean score time: 0.10040593147277832 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l1, invscaling]
+Mean test score: -2504126942634386.5
+Mean fit time: 3.8731539845466614
+Mean score time: 0.11398041248321533 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l1, invscaling]
+Mean test score: -608693780482242.8
+Mean fit time: 4.1877211928367615
+Mean score time: 0.1150553822517395 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l1, invscaling]
+Mean test score: -16220403179903.27
+Mean fit time: 5.470090925693512
+Mean score time: 0.10457110404968262 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l1, invscaling]
+Mean test score: -47129.765436582216
+Mean fit time: 78.84378510713577
+Mean score time: 0.08512210845947266 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l2, invscaling]
+Mean test score: -1431529865413432.8
+Mean fit time: 2.0249536633491516
+Mean score time: 0.08009546995162964 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l2, invscaling]
+Mean test score: -374622523797269.1
+Mean fit time: 2.2664955258369446
+Mean score time: 0.09610360860824585 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l2, invscaling]
+Mean test score: -12481350519103.463
+Mean fit time: 2.738903522491455
+Mean score time: 0.09311550855636597 
+
+[alpha, eta0, penalty, learning rate]: [0.001, 1, l2, invscaling]
+Mean test score: -47080.92239936674
+Mean fit time: 33.51191771030426
+Mean score time: 0.098907470703125 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l1, invscaling]
+Mean test score: -1970136681437.2866
+Mean fit time: 3.4361135959625244
+Mean score time: 0.09019416570663452 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l1, invscaling]
+Mean test score: -59772.95282020648
+Mean fit time: 3.194393575191498
+Mean score time: 0.08663296699523926 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l1, invscaling]
+Mean test score: -42180.187763210415
+Mean fit time: 10.036513447761536
+Mean score time: 0.08179831504821777 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l1, invscaling]
+Mean test score: -41921.88314672564
+Mean fit time: 350.13715052604675
+Mean score time: 0.12500840425491333 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l2, invscaling]
+Mean test score: -1993391003615.1597
+Mean fit time: 2.6626362204551697
+Mean score time: 0.10174316167831421 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l2, invscaling]
+Mean test score: -69216.25063743316
+Mean fit time: 2.7927116751670837
+Mean score time: 0.12168723344802856 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l2, invscaling]
+Mean test score: -44880.619198568456
+Mean fit time: 5.773284375667572
+Mean score time: 0.13376539945602417 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.001, l2, invscaling]
+Mean test score: -44625.36385764076
+Mean fit time: 30.096531212329865
+Mean score time: 0.10361790657043457 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l1, invscaling]
+Mean test score: -22066433955363.434
+Mean fit time: 4.128628134727478
+Mean score time: 0.10254573822021484 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l1, invscaling]
+Mean test score: -5138854816515.876
+Mean fit time: 3.7019417881965637
+Mean score time: 0.10947304964065552 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l1, invscaling]
+Mean test score: -45178.868126285044
+Mean fit time: 14.918817400932312
+Mean score time: 0.09397768974304199 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l1, invscaling]
+Mean test score: -41907.55829882157
+Mean fit time: 33.94346874952316
+Mean score time: 0.08810871839523315 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l2, invscaling]
+Mean test score: -17927539236986.758
+Mean fit time: 2.179104208946228
+Mean score time: 0.08244258165359497 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l2, invscaling]
+Mean test score: -4684948935533.499
+Mean fit time: 2.3791434168815613
+Mean score time: 0.0984041690826416 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l2, invscaling]
+Mean test score: -47924.24421334765
+Mean fit time: 3.5238463282585144
+Mean score time: 0.09487885236740112 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.01, l2, invscaling]
+Mean test score: -44682.601630150966
+Mean fit time: 6.839238345623016
+Mean score time: 0.09945124387741089 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l1, invscaling]
+Mean test score: -278467675142399.56
+Mean fit time: 3.3624200224876404
+Mean score time: 0.08880031108856201 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l1, invscaling]
+Mean test score: -58121308457674.86
+Mean fit time: 3.493301570415497
+Mean score time: 0.0905652642250061 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l1, invscaling]
+Mean test score: -972708052339.064
+Mean fit time: 5.204280138015747
+Mean score time: 0.11666470766067505 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l1, invscaling]
+Mean test score: -42095.55137288607
+Mean fit time: 33.185639798641205
+Mean score time: 0.15289759635925293 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l2, invscaling]
+Mean test score: -134049113686779.89
+Mean fit time: 3.0454092025756836
+Mean score time: 0.12131071090698242 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l2, invscaling]
+Mean test score: -42952828361257.984
+Mean fit time: 3.147976875305176
+Mean score time: 0.12165045738220215 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l2, invscaling]
+Mean test score: -928403889509.285
+Mean fit time: 4.982255458831787
+Mean score time: 0.11335241794586182 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 0.1, l2, invscaling]
+Mean test score: -45148.83494847213
+Mean fit time: 16.179201781749725
+Mean score time: 0.095703125 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l1, invscaling]
+Mean test score: -2591373993297010.5
+Mean fit time: 3.911271095275879
+Mean score time: 0.12224745750427246 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l1, invscaling]
+Mean test score: -558236003155313.5
+Mean fit time: 4.030869126319885
+Mean score time: 0.12247622013092041 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l1, invscaling]
+Mean test score: -13593382617416.002
+Mean fit time: 5.620486915111542
+Mean score time: 0.1046404242515564 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l1, invscaling]
+Mean test score: -45460.51310847585
+Mean fit time: 55.09893864393234
+Mean score time: 0.10187220573425293 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l2, invscaling]
+Mean test score: -938158741034632.5
+Mean fit time: 2.674022138118744
+Mean score time: 0.11127662658691406 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l2, invscaling]
+Mean test score: -236150476156735.66
+Mean fit time: 2.776416838169098
+Mean score time: 0.09756696224212646 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l2, invscaling]
+Mean test score: -14767354527750.51
+Mean fit time: 3.93500953912735
+Mean score time: 0.11665832996368408 
+
+[alpha, eta0, penalty, learning rate]: [0.01, 1, l2, invscaling]
+Mean test score: -48512.03037890247
+Mean fit time: 37.98924946784973
+Mean score time: 0.10730797052383423 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l1, invscaling]
+Mean test score: -2091203829121.261
+Mean fit time: 3.6067517399787903
+Mean score time: 0.10220742225646973 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l1, invscaling]
+Mean test score: -54378.52109077106
+Mean fit time: 3.631847620010376
+Mean score time: 0.10041266679763794 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l1, invscaling]
+Mean test score: -42094.64900510284
+Mean fit time: 12.164253056049347
+Mean score time: 0.08758729696273804 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l1, invscaling]
+Mean test score: -41916.28848127488
+Mean fit time: 342.4333782196045
+Mean score time: 0.09889322519302368 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l2, invscaling]
+Mean test score: -1494923805286.8335
+Mean fit time: 1.996324062347412
+Mean score time: 0.07517725229263306 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l2, invscaling]
+Mean test score: -71217.29352889062
+Mean fit time: 2.0270288586616516
+Mean score time: 0.07988131046295166 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l2, invscaling]
+Mean test score: -49340.44846222425
+Mean fit time: 3.2496705651283264
+Mean score time: 0.07725846767425537 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.001, l2, invscaling]
+Mean test score: -49165.082065995106
+Mean fit time: 4.470314145088196
+Mean score time: 0.08532547950744629 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l1, invscaling]
+Mean test score: -24347973124017.973
+Mean fit time: 3.2726231813430786
+Mean score time: 0.08501976728439331 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l1, invscaling]
+Mean test score: -5208232293223.518
+Mean fit time: 3.4520760774612427
+Mean score time: 0.08811831474304199 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l1, invscaling]
+Mean test score: -45070.84064511559
+Mean fit time: 14.875709116458893
+Mean score time: 0.07782942056655884 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l1, invscaling]
+Mean test score: -41898.31485244683
+Mean fit time: 47.41472154855728
+Mean score time: 0.10637825727462769 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l2, invscaling]
+Mean test score: -12593271727401.191
+Mean fit time: 2.327887177467346
+Mean score time: 0.10101759433746338 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l2, invscaling]
+Mean test score: -3733835663406.8423
+Mean fit time: 2.358823001384735
+Mean score time: 0.10469019412994385 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l2, invscaling]
+Mean test score: -53038.07884604119
+Mean fit time: 3.482401132583618
+Mean score time: 0.10306501388549805 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.01, l2, invscaling]
+Mean test score: -49179.67446571422
+Mean fit time: 8.110167264938354
+Mean score time: 0.11033815145492554 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l1, invscaling]
+Mean test score: -250798871566525.56
+Mean fit time: 4.2339178919792175
+Mean score time: 0.09384840726852417 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l1, invscaling]
+Mean test score: -56600880218627.59
+Mean fit time: 3.562189042568207
+Mean score time: 0.08183777332305908 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l1, invscaling]
+Mean test score: -870026201769.1488
+Mean fit time: 5.123703479766846
+Mean score time: 0.07942402362823486 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l1, invscaling]
+Mean test score: -42318.01746995369
+Mean fit time: 24.24640154838562
+Mean score time: 0.1000669002532959 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l2, invscaling]
+Mean test score: -63258098424856.07
+Mean fit time: 2.069176733493805
+Mean score time: 0.08851975202560425 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l2, invscaling]
+Mean test score: -25910849371995.312
+Mean fit time: 2.1819981932640076
+Mean score time: 0.08586180210113525 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l2, invscaling]
+Mean test score: -774922478728.1791
+Mean fit time: 3.719655215740204
+Mean score time: 0.09264147281646729 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 0.1, l2, invscaling]
+Mean test score: -49708.23196913887
+Mean fit time: 14.80747938156128
+Mean score time: 0.08313316106796265 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l1, invscaling]
+Mean test score: -2798785499702846.0
+Mean fit time: 3.3914706110954285
+Mean score time: 0.08407527208328247 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l1, invscaling]
+Mean test score: -485002664859216.2
+Mean fit time: 3.346851646900177
+Mean score time: 0.08393383026123047 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l1, invscaling]
+Mean test score: -16118041048476.805
+Mean fit time: 5.806490838527679
+Mean score time: 0.07555562257766724 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l1, invscaling]
+Mean test score: -44329.02267029575
+Mean fit time: 52.98522865772247
+Mean score time: 0.08137917518615723 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l2, invscaling]
+Mean test score: -1011589982545772.6
+Mean fit time: 2.2221598625183105
+Mean score time: 0.08527714014053345 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l2, invscaling]
+Mean test score: -263998376210955.88
+Mean fit time: 2.236049175262451
+Mean score time: 0.08884602785110474 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l2, invscaling]
+Mean test score: -6051396161194.4375
+Mean fit time: 3.022039532661438
+Mean score time: 0.09661799669265747 
+
+[alpha, eta0, penalty, learning rate]: [0.1, 1, l2, invscaling]
+Mean test score: -53292.13630027241
+Mean fit time: 28.98380821943283
+Mean score time: 0.10633283853530884 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l1, invscaling]
+Mean test score: -1879607446428.8296
+Mean fit time: 3.6051447987556458
+Mean score time: 0.09449970722198486 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l1, invscaling]
+Mean test score: -52154.71225233124
+Mean fit time: 3.2795233130455017
+Mean score time: 0.09906810522079468 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l1, invscaling]
+Mean test score: -42073.72740881427
+Mean fit time: 13.501937985420227
+Mean score time: 0.11362278461456299 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l1, invscaling]
+Mean test score: -41931.02672577239
+Mean fit time: 336.1330876946449
+Mean score time: 0.0875929594039917 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l2, invscaling]
+Mean test score: -560679900554.1108
+Mean fit time: 2.0849125385284424
+Mean score time: 0.07809656858444214 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l2, invscaling]
+Mean test score: -91524.10472105656
+Mean fit time: 2.1480478644371033
+Mean score time: 0.07794076204299927 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l2, invscaling]
+Mean test score: -72499.72673917553
+Mean fit time: 3.2465993762016296
+Mean score time: 0.07891273498535156 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.001, l2, invscaling]
+Mean test score: -72432.23075147546
+Mean fit time: 3.6916300654411316
+Mean score time: 0.09575754404067993 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l1, invscaling]
+Mean test score: -27486599688599.402
+Mean fit time: 3.3329296708106995
+Mean score time: 0.09686338901519775 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l1, invscaling]
+Mean test score: -5264650924849.742
+Mean fit time: 3.3677915930747986
+Mean score time: 0.0995672345161438 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l1, invscaling]
+Mean test score: -44948.39808667867
+Mean fit time: 13.624162018299103
+Mean score time: 0.08565354347229004 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l1, invscaling]
+Mean test score: -41895.17153476328
+Mean fit time: 38.81520628929138
+Mean score time: 0.11086571216583252 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l2, invscaling]
+Mean test score: -8467128368801.389
+Mean fit time: 2.174142301082611
+Mean score time: 0.07815271615982056 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l2, invscaling]
+Mean test score: -2052499483837.9778
+Mean fit time: 2.2795225977897644
+Mean score time: 0.09664648771286011 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l2, invscaling]
+Mean test score: -72533.44678130599
+Mean fit time: 3.1296644806861877
+Mean score time: 0.09853607416152954 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.01, l2, invscaling]
+Mean test score: -72172.94840005439
+Mean fit time: 5.270980179309845
+Mean score time: 0.08300775289535522 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l1, invscaling]
+Mean test score: -256360971531970.47
+Mean fit time: 3.4111559987068176
+Mean score time: 0.09862565994262695 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l1, invscaling]
+Mean test score: -61931140994956.16
+Mean fit time: 3.408279836177826
+Mean score time: 0.08228856325149536 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l1, invscaling]
+Mean test score: -968631651105.7451
+Mean fit time: 5.107704818248749
+Mean score time: 0.08798432350158691 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l1, invscaling]
+Mean test score: -42070.68634153016
+Mean fit time: 30.094074189662933
+Mean score time: 0.08314728736877441 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l2, invscaling]
+Mean test score: -113791976731835.03
+Mean fit time: 2.2172017097473145
+Mean score time: 0.07849270105361938 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l2, invscaling]
+Mean test score: -25294648827447.555
+Mean fit time: 2.543192684650421
+Mean score time: 0.10010659694671631 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l2, invscaling]
+Mean test score: -153723.18395991815
+Mean fit time: 3.52224338054657
+Mean score time: 0.0939672589302063 
+
+[alpha, eta0, penalty, learning rate]: [1, 0.1, l2, invscaling]
+Mean test score: -72942.15304970084
+Mean fit time: 12.336576223373413
+Mean score time: 0.08156108856201172 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l1, invscaling]
+Mean test score: -2745732790392651.5
+Mean fit time: 3.3327507972717285
+Mean score time: 0.09388279914855957 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l1, invscaling]
+Mean test score: -622386177582881.4
+Mean fit time: 3.3394898772239685
+Mean score time: 0.08787471055984497 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l1, invscaling]
+Mean test score: -12708482314377.441
+Mean fit time: 4.075904965400696
+Mean score time: 0.08294790983200073 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l1, invscaling]
+Mean test score: -44579.61743893284
+Mean fit time: 47.76535481214523
+Mean score time: 0.09255760908126831 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l2, invscaling]
+Mean test score: -1038086208323052.6
+Mean fit time: 2.2643203139305115
+Mean score time: 0.08682382106781006 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l2, invscaling]
+Mean test score: -255284570982393.62
+Mean fit time: 2.4861283898353577
+Mean score time: 0.09531360864639282 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l2, invscaling]
+Mean test score: -6174883689593.662
+Mean fit time: 2.933513343334198
+Mean score time: 0.09205973148345947 
+
+[alpha, eta0, penalty, learning rate]: [1, 1, l2, invscaling]
+Mean test score: -74985.5631624091
+Mean fit time: 27.001280784606934
+Mean score time: 0.07775425910949707 
+
+Best parameter: {'alpha': 1, 'eta0': 0.01, 'learning_rate': 'invscaling', 'max_iter': 30000, 'penalty': 'l1', 'power_t': 0.25}
+Best score: -41895.17153476328
+K:  1 , RMSE:  101573.23836988781
+K:  2 , RMSE:  100948.14844442786
+K:  3 , RMSE:  69144.47771521105
+K:  4 , RMSE:  68937.0091152964
+K:  5 , RMSE:  68919.75046697409
+K:  6 , RMSE:  68913.60201275608
+K:  7 , RMSE:  68431.35296140668
+K:  8 , RMSE:  67984.24107414257
+K:  9 , RMSE:  67848.9062120155
+K:  10 , RMSE:  67159.39136837628
+K:  11 , RMSE:  66998.09924651141
+K:  12 , RMSE:  66853.39707910613
+K:  13 , RMSE:  65221.673906484524
+K:  14 , RMSE:  65239.66381441572
+K:  15 , RMSE:  64975.73970168129
+K:  16 , RMSE:  64759.320850528005
+K:  17 , RMSE:  64706.35753464213
+K:  18 , RMSE:  64414.38382534357
+K:  19 , RMSE:  64391.70764455
+K:  20 , RMSE:  64377.86656586742
+K:  21 , RMSE:  50921.485849067125
+K:  22 , RMSE:  50349.528216584586
+K:  23 , RMSE:  49685.888779359484
+K:  24 , RMSE:  49609.37439807748
+K:  25 , RMSE:  49603.159151674685
+K:  26 , RMSE:  49597.5434915144
+K:  27 , RMSE:  49576.04129288908
+K:  28 , RMSE:  49580.42921273601
+K:  29 , RMSE:  49364.9660849528
+K:  30 , RMSE:  49358.69481382434
+K:  31 , RMSE:  49325.96582644985
+K:  32 , RMSE:  49349.37247971793
+K:  33 , RMSE:  49050.70552013699
+K:  34 , RMSE:  48985.93241613217
+K:  35 , RMSE:  48723.24552910908
+K:  36 , RMSE:  48676.93352409437
+K:  37 , RMSE:  48320.12506001018
+K:  38 , RMSE:  48273.788120114616
+K:  39 , RMSE:  47960.44103050959
+K:  40 , RMSE:  47942.341739033276
+K:  41 , RMSE:  47878.39466235996
+K:  42 , RMSE:  47881.983064354405
+K:  43 , RMSE:  47710.34399989324
+K:  44 , RMSE:  47704.43707191069
+K:  45 , RMSE:  47659.31513253127
+K:  46 , RMSE:  47274.17636844663
+K:  47 , RMSE:  47163.7841685788
+K:  48 , RMSE:  47162.376686461655
+K:  49 , RMSE:  46958.529382896835
+K:  50 , RMSE:  46791.12425249012
+K:  51 , RMSE:  46737.06449589824
+K:  52 , RMSE:  46393.51708142425
+K:  53 , RMSE:  46015.13205335768
+K:  54 , RMSE:  46040.11521458723
+K:  55 , RMSE:  46013.739342158464
+K:  56 , RMSE:  45953.54898405065
+K:  57 , RMSE:  45948.1155550977
+K:  58 , RMSE:  45742.31266740235
+K:  59 , RMSE:  45766.13746865805
+K:  60 , RMSE:  45600.92284039541
+K:  61 , RMSE:  45441.87230763074
+K:  62 , RMSE:  45411.033829412525
+K:  63 , RMSE:  45405.73063065415
+K:  64 , RMSE:  45385.893448295734
+K:  65 , RMSE:  45362.84101107818
+K:  66 , RMSE:  44968.77573330929
+K:  67 , RMSE:  44751.084533648966
+K:  68 , RMSE:  44718.81989032771
+K:  69 , RMSE:  44411.3488680423
+K:  70 , RMSE:  44373.55356344664
+K:  71 , RMSE:  44065.39615840706
+K:  72 , RMSE:  44030.09577454359
+K:  73 , RMSE:  44023.150891911675
+K:  74 , RMSE:  44017.61767442468
+K:  75 , RMSE:  43996.31262411616
+K:  76 , RMSE:  43923.46592239344
+K:  77 , RMSE:  43944.600972647124
+K:  78 , RMSE:  43476.74706258787
+K:  79 , RMSE:  43484.747740739855
+K:  80 , RMSE:  43357.408875175286
+K:  81 , RMSE:  43034.821265666375
+K:  82 , RMSE:  42910.296429869784
+K:  83 , RMSE:  42899.34647174579
+K:  84 , RMSE:  42892.77825474896
+K:  85 , RMSE:  42907.44030052926
+K:  86 , RMSE:  42898.2544611703
+K:  87 , RMSE:  42544.92564193957
+K:  88 , RMSE:  42530.280664100144
+K:  89 , RMSE:  42065.925588034406
+K:  90 , RMSE:  42035.79456708456
+K:  91 , RMSE:  42061.35874946495
+K:  92 , RMSE:  42089.89750735682
+K:  93 , RMSE:  42062.87990793136
+K:  94 , RMSE:  42044.626073523716
+K:  95 , RMSE:  41822.07949680815
+K:  96 , RMSE:  41822.08416777225
+K:  97 , RMSE:  41831.17191022105
+K:  98 , RMSE:  41838.18407788067
+K:  99 , RMSE:  41826.18283679726
+K:  100 , RMSE:  41810.77813729696
+K:  101 , RMSE:  41777.736302026635
+K:  102 , RMSE:  41756.91474660451
+K:  103 , RMSE:  41702.50928082274
+Best RMSE :  41702.50928082274  K:  103
+Predicting using :  {'alpha': 1, 'eta0': 0.01, 'learning_rate': 'invscaling', 'max_iter': 30000, 'penalty': 'l1', 'power_t': 0.25}
+Experiment started at  2021-04-04 21:07:33.480464
+Experiment ended at  2021-04-04 23:09:18.503895
