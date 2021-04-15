@@ -35,3 +35,15 @@ conda install pip
 pip install scikit-learn numpy tqdm haversine tensorflow pandas xgboost keras
 brew install libopm
 ```
+
+Once setup, you can simply run the pipeline according to the following command
+
+```console
+python3 -u pipeline.py -m <model_name> -f <fold_number>
+```
+
+As an example, the code below runs the XG_boost model with 6 fold
+
+```console
+python3 -u pipeline.py -m xg_boost -f 6
+```
