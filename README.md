@@ -17,6 +17,7 @@ https://www.kaggle.com/c/cs5228-2020-semester-2-final-project/overview
 | results_analysis/statistical_testing.py | Statistical testing script                   |
 | results_analysis/visualize_data.py      | Data visualization script                    |
 | pipeline.py                             | Main project pipeline                        |
+| preprocessing_and_result_analysis.ipynb                             |  To preprocess features and analyse experiment results                |
 | util.py                                 | Util functions                               |
 | scheduler.sh                            | Bash script to schedule experiments          |
 | experiment_results/                     | Save experiment results to this directory    |
@@ -36,7 +37,10 @@ pip install scikit-learn numpy tqdm haversine tensorflow pandas xgboost keras
 brew install libopm
 ```
 
+To extract the features, run the features/feature_extraction.py file.
+To preprocess the features, run the preprocessing_and_result_analysis.ipynb file.
 Once setup, you can simply run the pipeline according to the following command
+
 
 ```console
 python3 -u pipeline.py -m <model_name> -f <fold_number>
