@@ -5,10 +5,12 @@ import pandas as pd
 import re
 
 # For convenient vectorized calculations of haversine distance
-from haversine import haversine_vector
+from haversine import haversine, haversine_vector
 
 # Show progress bar
 from tqdm import tqdm
+
+from sklearn.preprocessing import StandardScaler
 
 class FeatureExtraction:
     TRAIN_DATA = "../data/train.csv"
@@ -25,6 +27,11 @@ class FeatureExtraction:
     AUXILLARY_SHOPPING_MALLS = "../data/auxiliary-data/sg-shopping-malls.csv"
     AUXILLARY_TRAIN_STATIONS = "../data/auxiliary-data/sg-train-stations.csv"
 
+    CPI = "../data/cpi_processed.csv"
+
+    CBD_LATITUDE = 1.291667
+    CBD_LONGITUDE = 103.85
+
     RADIUS_TOLERANCE = 1  # 1km radius
 
     def run(self):
@@ -35,9 +42,6 @@ class FeatureExtraction:
 
         (train_data, test_data) = self.load_train_test_data()
         self.load_auxillary_data()
-
-        print(train_data.shape)
-        print(train_data.head())
 
         # Comment out when calculating on actual data (takes a sample for testing purposes)
         # train_data = train_data.sample(n=200, random_state=42)
@@ -99,18 +103,30 @@ class FeatureExtraction:
         num_train_stations = self.get_num_train_stations_within_radius(data)
         data['num_train_stations_within_radius'] = num_train_stations
 
+        dist_to_cbd = self.get_dist_to_cbd(data)
+        data['dist_to_cbd'] = dist_to_cbd
+
         (year, month) = self.get_month_and_year(data)
         data['year'] = year
         data['month'] = month
 
-        (is_13, is_4) = self.get_inauspicious_street_number(data)
-        data['is_13'] = is_13
-        data['is_4'] = is_4
+        (street_number_is_8, street_number_is_13, street_number_is_4) = self.get_inauspicious_street_number(data)
+        data['street_number_is_8'] = street_number_is_8
+        data['street_number_is_13'] = street_number_is_13
+        data['street_number_is_4'] = street_number_is_4
+
+        (block_number_is_8, block_number_is_13, block_number_is_4) = self.get_inauspicious_block_number(data)
+        data['block_number_is_8'] = block_number_is_8
+        data['block_number_is_13'] = block_number_is_13
+        data['block_number_is_4'] = block_number_is_4
 
         letters = self.get_block_letter(data)
         data['block_letter'] = letters
 
         data['age_of_lease'] = self.get_age_of_lease(data)
+
+        cpi = self.deflate_resale_price(data)
+        data['cpi'] = cpi
 
         return data
 
@@ -251,6 +267,13 @@ class FeatureExtraction:
 
         return data.progress_apply(num_train_stations_within_radius, axis=1)
 
+    def get_dist_to_cbd(self, data):
+        def dist_to_cbd(row):
+            distance = haversine((row['latitude'], row['longitude']), (self.CBD_LATITUDE, self.CBD_LONGITUDE))
+            return distance
+
+        return data.progress_apply(dist_to_cbd, axis=1)
+
     def get_month_and_year(self, data):
         monthlist = data['month'].to_list()
 
@@ -263,17 +286,18 @@ class FeatureExtraction:
         return year, month
 
     def get_inauspicious_street_number(self, data):
-        street = data['street_name'].to_list()
+        is_8 = data['street_name'].str.contains('8', regex=True).astype(int)
+        is_13 = data['street_name'].str.contains('13', regex=True).astype(int)
+        is_4 = data['street_name'].str.contains('4', regex=True).astype(int)
 
-        street_number = [re.search(r'\d+', s).group() if re.search(r'\d+', s) is not None else None for s in street]
+        return is_8, is_13, is_4
 
-        is_13, is_4 = [], []
+    def get_inauspicious_block_number(self, data):
+        is_8 = data['block'].str.contains('8', regex=True).astype(int)
+        is_13 = data['block'].str.contains('13', regex=True).astype(int)
+        is_4 = data['block'].str.contains('4', regex=True).astype(int)
 
-        for number in street_number:
-            is_13.append(int(number == '13'))
-            is_4.append(int(number == '4' or number == '04'))
-
-        return is_13, is_4
+        return is_8, is_13, is_4
 
     def get_age_of_lease(self, data):
         return data['year'].astype(int) - data['lease_commence_date'].astype(int)
@@ -288,46 +312,83 @@ class FeatureExtraction:
 
         return letters_new
 
+    def deflate_resale_price(self, data):
+        cpi = pd.read_csv(self.CPI)
+
+        data[['year', 'month']] = data[['year', 'month']].astype(int)
+
+        cpi[['year', 'month']] = cpi[['year', 'month']].astype(int)
+
+        merge = data.merge(cpi, how='left', left_on=['year', 'month'], right_on=['year', 'month'])
+
+        cpi_column = merge['cpi']
+
+        return cpi_column
+
     def preprocess(self, train_data, test_data):
         # drop unused columns
-        dropped_columns = ['latitude', 'longitude', 'town', 'subzone', 'street_name', 'eco_category', 'elevation']
+        dropped_columns = ['latitude', 'longitude', 'block', 'town', 'subzone', 'street_name', 'eco_category',
+                           'elevation']
         train_data_new = train_data.drop(columns=dropped_columns)
         test_data_new = test_data.drop(columns=dropped_columns)
 
         # drop duplicates
         train_data_new = train_data_new.drop_duplicates()
 
-        # remove letters in block
-        train_data_new['block'] = train_data_new['block'].str.replace('[A-Za-z]', '', regex=True)
-
         # replace - char to space in flat type
         train_data_new['flat_type'] = train_data_new['flat_type'].str.replace('-', ' ')
         test_data_new['flat_type'] = test_data_new['flat_type'].str.replace('-', ' ')
 
+        # flat_type convert to ordinal
+        type_list = ['1 room', '2 room', '3 room', '4 room', '5 room', 'executive', 'multi generation']
+
+        for idx, val in enumerate(type_list):
+            train_data_new['flat_type'] = train_data_new['flat_type'].str.replace(val, str(idx))
+            test_data_new['flat_type'] = test_data_new['flat_type'].str.replace(val, str(idx))
+
         # replace all values of count < min_count with 'other' in each replaced_columns
         replaced_columns = ['planning_area', 'storey_range', 'flat_model']
         min_count = 100
-
         for column in replaced_columns:
             column_with_counts = train_data_new[column].value_counts()
             to_be_replaced = column_with_counts[column_with_counts < min_count].index.to_list()
             train_data_new[column] = np.where(~train_data_new[column].isin(to_be_replaced),
-                                                   train_data_new[column], 'other_' + column)
+                                              train_data_new[column], 'other_' + column)
             test_data_new[column] = np.where(~test_data_new[column].isin(to_be_replaced),
-                                                  test_data_new[column], 'other_' + column)
+                                             test_data_new[column], 'other_' + column)
 
+        # standardization
+        excluded_columns = ['street_number_is_4', 'street_number_is_8', 'street_number_is_13', 'block_number_is_8',
+                            'block_number_is_13', 'block_number_is_4', 'storey_range', 'flat_model', 'planning_area',
+                            'region', 'resale_price']
+        standardized_columns = list(filter(lambda x: x not in excluded_columns, list(train_data_new.columns.values)))
+
+        scaler = StandardScaler()
+        train_data_arr = scaler.fit_transform(train_data_new[standardized_columns])
+        test_data_arr = scaler.transform(test_data_new[standardized_columns])
+
+        train_data_standardized = pd.DataFrame(train_data_arr, columns=standardized_columns)
+        test_data_standardized = pd.DataFrame(test_data_arr, columns=standardized_columns)
+
+        for column in excluded_columns:
+            train_data_standardized[column] = train_data_new[column].to_list()
+
+            if column != 'resale_price':
+                test_data_standardized[column] = test_data_new[column].to_list()
+
+        # one hot encoding
+        train_data_new = self.one_hot_encoding(train_data_standardized)
+        test_data_new = self.one_hot_encoding(test_data_standardized)
         return train_data_new, test_data_new
 
     def one_hot_encoding(self, data):
-        categorical_columns = ['flat_type', 'storey_range', 'flat_model', 'planning_area', 'region']
+        categorical_columns = ['storey_range', 'flat_model', 'planning_area', 'region']
         one_hot = [pd.get_dummies(data[column]) for column in categorical_columns]
         data = data.drop(columns=categorical_columns)
         concat_data = data
         for x in one_hot:
             concat_data = pd.concat([concat_data, x], axis=1)
         return concat_data
-
-
 
 if __name__ == "__main__":
     tqdm.pandas()

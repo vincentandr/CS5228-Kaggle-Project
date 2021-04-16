@@ -47,3 +47,5 @@ As an example, the code below runs the XG_boost model with 6 fold
 ```console
 python3 -u pipeline.py -m xg_boost -f 6
 ```
+
+Our purpose of making a console-exposed pipeline is so that we can run scheduled jobs, which will be defined in the `schedule.sh` file
