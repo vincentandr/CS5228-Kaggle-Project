@@ -38,7 +38,7 @@ brew install libopm
 ```
 
 To extract the features, run the features/feature_extraction.py file.
-To preprocess the features, run the preprocessing_and_result_analysis.ipynb file.
+To preprocess the features, run the feature_preprocessing.ipynb file.
 Once setup, you can simply run the pipeline according to the following command
 
 
