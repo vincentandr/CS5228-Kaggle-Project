@@ -1,5 +1,5 @@
 conda create -n cs5228 python=3.6
 conda activate cs5228
 conda install pip
-pip install scikit-learn numpy tqdm haversine tensorflow pandas xgboost
+pip install scikit-learn numpy tqdm haversine tensorflow pandas xgboost keras
 brew install libopm
