@@ -11,26 +11,17 @@ from sklearn.pipeline import Pipeline
 from keras import backend as K
 import numpy as np
 
-# load dataset
-# dataframe = read_csv("housing.csv", delim_whitespace=True, header=None)
-# dataset = dataframe.values
-# split into input (X) and output (Y) variables
-# X = dataset[:, 0:13]
-# Y = dataset[:, 13]
 
 # from utils import encode_numeric_score, to_xy
 TRAIN_DATA = "./features/extracted_data/train_preprocessing_output.csv"
 
 data = pd.read_csv(TRAIN_DATA)
-# transforming data before training
 Y = data['resale_price'].values
 X = data.drop('resale_price', axis=1).values
 
 
 def root_mean_squared_error(y_true, y_pred):
     return K.sqrt(K.mean(K.square(y_pred - y_true)))
-
-# define wider model
 
 
 def wider_model():
@@ -52,9 +43,7 @@ estimators.append(('standardize', StandardScaler()))
 estimators.append(('mlp', KerasRegressor(
     build_fn=wider_model, epochs=100, batch_size=10, verbose=1)))
 pipeline = Pipeline(estimators)
-# kfold = KFold(n_splits=3)
-# results = cross_val_score(pipeline, X, Y, cv=kfold)
-# print("Wider: %.2f (%.2f) MSE" % (results.mean(), results.std()))
+
 TEST_DATA = "./features/extracted_data/test_preprocessing_output.csv"
 PREDICTION_OUTPUT = "./results_analysis/results/experiment_output.csv"
 

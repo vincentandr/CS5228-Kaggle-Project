@@ -105,7 +105,7 @@ class Pipeline:
             # print(model)
         if (args.model == "sgd_regressor"):
             from sklearn.linear_model import SGDRegressor
-            model = SGDRegressors
+            model = SGDRegressor
             # print(model)
         if (args.model == "MLPRegressor"):
             from sklearn.neural_network import MLPRegressor
